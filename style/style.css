@@ -1,4 +1,21 @@
 /* DWWM-stream */
+body{
+    background-image: url(../img/cinema.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: local;
+    margin: 0;
+    padding: 0;
+    font-family: 'Luckiest Guy', cursive;
+
+}
 h1{
-    color: gray;
+    color: white;
+}
+
+/********************** FOOTER */
+
+footer{
+    padding: 2em;
 }
