@@ -65,6 +65,27 @@
             </div>
         </div>
     </div>
+    <?php 
+        include 'php/database.php'; // on inclut notre fichier de connection
+        $pdo = Database::connect(); // on se connecte à la base 
+        $sql5 = "SELECT *
+                FROM films";
+        $reqTra = $pdo->query($sql5);
+        $count = $reqTra->rowCount();
+        if($count != 0) {  
+        foreach ($reqTra as $row) { //on cree les lignes du tableau avec chaque valeur retournée
+            // if ($row['fk_salarie_id']) {       
+                echo '<tr class="text-center text-white id="deleteResa'.$row['films_id'].'">';
+                echo'<td>' . $row['films_nom'] . '</td>';
+                echo'<td>' . $row['films_sortie'] . '</td>';                            
+                echo'<td>' . $row['films_real'] . '</td>';                            
+                // echo'<td><button onclick="deleteResa('.$row['id_resa'].')" type="button" class="btn btn-danger"><i class="fas fa-trash text-white"></i></button> </td>';                                                     
+                echo '</tr>';
+            //  }
+        } // fin de foreach 
+        } else echo '<h4 class="text-center text-danger"><i class="fas fa-exclamation-triangle"></i> &nbsp;<u>Pas de films disponible</u></h4>';  
+        Database::disconnect(); // on se deconnecte de la base    
+    ?>
     <div class="container">
         <nav class="mt-4" aria-label="...">
             <ul class="pagination justify-content-center">

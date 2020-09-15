@@ -1,0 +1,31 @@
+BDD :  
+
+table films :
+ 
+-id
+-nom 
+-année de sortie
+-genre
+-résumé
+-photo de couverture
+-réalisateurs
+-acteurs
+-durée
+
+
+table user :
+
+-id
+-pseudo
+-mdp
+-mail
+-bio
+-avatar
+
+
+table genre :
+
+-id_genre
+-film_id
+
+API liste de films
